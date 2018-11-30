@@ -1,2 +1,2 @@
-DEFAULT_REPLY = "HEY!!!"
+DEFAULT_REPLY = "こんにちは！"
 
