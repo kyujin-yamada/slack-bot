@@ -3,7 +3,9 @@ from slackbot.bot import Bot
 from slackbot.bot import respond_to
 from slackbot.bot import listen_to
 import re
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
+
+JST = timezone(timedelta(hours=+9), 'JST')
 
 def main():
     bot = Bot()
@@ -11,7 +13,7 @@ def main():
 
 @respond_to('今何時？')
 def now(message):
-    strftime = datetime.now().strftime("%Y/%m/%d %H時%M分%S秒だよ～")
+    strftime = datetime.now(JST).strftime("%Y/%m/%d %H時%M分%S秒だよ～")
     message.reply(strftime)
 
 def main():
